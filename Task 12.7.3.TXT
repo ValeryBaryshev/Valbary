@@ -1,0 +1,11 @@
+money = int(input("Введите сумму вклада в рублях:"))
+print("Сумма вклада:", money, "руб")
+M = int(money)
+per_cent = {'ТКБ': 5.6, 'СКБ': 5.9, 'ВТБ': 4.28, 'СБЕР': 4.0}
+pTKB = per_cent['ТКБ']
+pSKB = per_cent['СКБ']
+pVTB = per_cent['ВТБ']
+pSBER = per_cent['СБЕР']
+deposit = [pTKB/100*M, pSKB/100*M, pVTB/100*M, pSBER/100*M]
+print(deposit)
+print("Максимальная сумма, которую Вы можете заработать:", max(deposit))
