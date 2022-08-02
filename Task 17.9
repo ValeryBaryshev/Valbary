@@ -1,0 +1,28 @@
+L = (7, 3, 9, 1, 5, 6)
+
+A = int(input("Введите число:", ))
+x = int
+S = []
+for x in L:
+    S.append(x)
+print(S)
+def oops():
+    for i in range(len(S)):
+        for j in range(len(S) - i - 1):
+            if S[j] > S[j + 1]:
+                S[j], S[j + 1] = S[j + 1], S[j]
+    print(S)
+oops()
+
+def binary_search(S, A, left, right):
+    if left > right:
+        return False
+    middle = (right + left) // 2
+    if S[middle] == A:
+        return middle - 1
+    elif A <= S[middle]:
+        return binary_search(S, A, left, middle - 2)
+    else:  # иначе в правой
+        return binary_search(S, A, middle + 1, right)
+
+print(binary_search(S, A, 1, 9))
